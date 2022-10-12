@@ -1,9 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import time
+from bs4 import BeautifulSoup
+from wwr_ import wwr_job_scrapper
+from save_to_file import save_to_file
 
-print("start!")
-driver = webdriver.Chrome("C:/Users/82109/Desktop/chromedriver_win32/chromedriver.exe")
+keyword = input("keyword: ")
+jobs = wwr_job_scrapper(keyword)
 
-driver.implicitly_wait(3)
-driver.get("https://kr.indeed.com/jobs?q=python&l=&vjk=d364360d1e0368e3")
+# save_to_file(keyword, jobs)
